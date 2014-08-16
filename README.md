@@ -10,7 +10,7 @@ Token-Auth is a Token based authentication system. It generates token and stores
 
 Get the sources:
 ```bash
-git clone https://github.com/kdelemme/token-auth.git
+git clone https://github.com/kdelemme/nodejs-token-auth.git
 ```
 
 ### NodeJS
