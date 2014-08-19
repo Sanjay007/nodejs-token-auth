@@ -1,9 +1,9 @@
-# Token Authorization
+# Token-based Authentication
 
 
 ## Description
 
-Token-Auth is a Token based authorization system. It generates token and stores them in redis with user informations. It verifies provided token from HTTP Header (Authorization) in order to allow access to protected end point api.
+Token-Auth is a Token-based Authentication system. It generates token and stores them in redis with user informations. It verifies provided token from HTTP Header (Authorization) in order to allow access to protected end point api.
 
 
 ## Installation
