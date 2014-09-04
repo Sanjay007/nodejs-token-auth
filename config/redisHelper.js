@@ -24,22 +24,12 @@ exports.setTokenWithData = function(token, data, ttl, callback) {
 	if (timeToLive != null && typeof timeToLive !== 'number') throw new Error('TimeToLive is not a Number');
 
 
-	redisClient.set(token, JSON.stringify(userData), function(err, reply) {
+	redisClient.setex(token, timeToLive, JSON.stringify(userData), function(err, reply) {
 		if (err) callback(err);
 
 		if (reply) {
-			redisClient.expire(token, timeToLive, function(err, reply) {
-				if (err) callback(err);
-
-				if (reply) {
-					callback(null, true);
-				}
-				else {
-					callback(new Error('Expiration not set on redis'));
-				}
-			});
-		}
-		else {
+			callback(null, true);
+		} else {
 			callback(new Error('Token not set in redis'));
 		}
 	});
